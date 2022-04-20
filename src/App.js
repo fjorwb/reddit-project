@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+import React from 'react';
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
 import './App.css';
 
+import {Navbar, SearchBar, RedditCards, SubReddits} from './components/index'
+
+import reducer from './reducer';
+
+
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Provider store={store}>
+      <section className='NavBar'>
+        <SearchBar/>
+			  <Navbar />
+      </section>
+      <section className='reddit'>
+        <RedditCards />
+        <SubReddits />
+      </section>
+		</Provider>
+	);
 }
 
 export default App;
