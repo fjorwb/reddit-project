@@ -1,9 +1,10 @@
 import React from 'react';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import './App.css';
 
-import {Navbar, SearchBar, RedditCards, SubReddits} from './components/index'
+import {Home, Best, Hot, New, Top, Rising} from './pages/index'
 
 import reducer from './reducer';
 
@@ -17,14 +18,16 @@ const store = createStore(
 function App() {
 	return (
 		<Provider store={store}>
-      <section className='NavBar'>
-        <SearchBar/>
-			  <Navbar />
-      </section>
-      <section className='reddit'>
-        <RedditCards />
-        <SubReddits />
-      </section>
+			<Router>
+				<Routes>
+					<Route exact path='/' element={<Home />}/>
+					<Route path='/best' element={<Best />}/>
+					<Route path='/hot' element={<Hot />}/>
+					<Route path='/new' element={<New />}/>
+					<Route path='/top' element={<Top />}/>
+					<Route path='/rising' element={<Rising />}/>
+				</Routes>
+			</Router>
 		</Provider>
 	);
 }

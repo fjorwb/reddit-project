@@ -1,12 +1,13 @@
 import React from "react";
 
-import RedditCard from "./RedditCard";
+import {RedditCard, SubReddits} from './index'
 
 function RedditCards() {
     return(
-        <main className='reddit-cards'>
+        <section className='reddit-cards'>
             <RedditCard/>
-        </main>
+            <SubReddits />
+        </section>
     )
 }
 
