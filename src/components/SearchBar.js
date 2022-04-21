@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 const logo = require('../assets/images/RedditLogo.png')
 
 function SearchBar() {
@@ -7,7 +7,9 @@ function SearchBar() {
         <section className='header'>
             <div className='logo'>
                 <div className='img'>
-                    <img src={logo} width='35' alt='logo' />
+                    <Link to='/'>
+                        <img src={logo} width='35' alt='logo' />
+                    </Link>
                 </div>
                 <div className='logo-title'>
                     <h2 className='word1'>Reddit</h2>

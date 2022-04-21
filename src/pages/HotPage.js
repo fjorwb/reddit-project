@@ -18,7 +18,6 @@ function Hot() {
                     <SubReddits />
                 </div>
             </div>
-            <h1>Hot</h1>
         </section>
 
     )

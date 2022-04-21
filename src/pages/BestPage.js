@@ -18,7 +18,6 @@ function Best() {
                     <SubReddits />
                 </div>
             </div>
-            <h1>Best</h1>
         </section>
 
     )

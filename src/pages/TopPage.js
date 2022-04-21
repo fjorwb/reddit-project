@@ -18,7 +18,6 @@ function Top() {
                     <SubReddits />
                 </div>
             </div>
-            <h1>Top</h1>
         </section>
 
     )

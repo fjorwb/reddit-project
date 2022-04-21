@@ -18,7 +18,6 @@ function Rising() {
                     <SubReddits />
                 </div>
             </div>
-            <h1>Rising</h1>
         </section>
 
     )

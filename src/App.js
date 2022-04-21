@@ -7,6 +7,7 @@ import './App.css';
 import {Home, Best, Hot, New, Top, Rising} from './pages/index'
 
 import reducer from './reducer';
+import Fetch from './components/fech';
 
 
 const store = createStore(
@@ -26,6 +27,7 @@ function App() {
 					<Route path='/new' element={<New />}/>
 					<Route path='/top' element={<Top />}/>
 					<Route path='/rising' element={<Rising />}/>
+					<Route path='/fetch' element={<Fetch />} />
 				</Routes>
 			</Router>
 		</Provider>

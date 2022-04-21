@@ -18,7 +18,6 @@ function New() {
                     <SubReddits />
                 </div>
             </div>
-            <h1>New</h1>
         </section>
 
     )
