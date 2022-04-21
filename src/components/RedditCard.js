@@ -6,28 +6,30 @@ const logo = require('../assets/images/RedditLogo.png')
 
 function RedditCard() {
 
-    const [ddd, setDdd] = useState([])
-    const [url, setUrl] = useState('https://www.reddit.com/r/popular.json')
+    const [dataCard, setdataCard] = useState([])
+    const [urlCard, setUrlCard] = useState('https://www.reddit.com/r/all.json')
 
-    const getFetch = async () => {
-        const resp = await fetch(url)
+    const getFetchCard = async () => {
+        const resp = await fetch(urlCard)
         if(resp.ok) {
             const data = await resp.json()
-            setDdd(data.data.children)
+            setdataCard(data.data.children)
             return
         }
         throw new Error('Request failed!')
     }
 
+
+
     useEffect(() => {
-        getFetch(url)
-    },[url])
+        getFetchCard(urlCard)
+    },[urlCard])
 
     return(
         <div>
 
-        {ddd.map((dd, ndx) => {
-            const {ups, subreddit_name_prefixed, author, created, title, num_comments, url} = dd.data
+        {dataCard.map((dd, ndx) => {
+            const {score, subreddit_name_prefixed, author, created, title, description, num_comments, url} = dd.data
                 const time = Math.floor((Date.now() - (created * 1000)) / (60*60*1000))
 
             return(
@@ -39,7 +41,7 @@ function RedditCard() {
                         >
                         <img src={'https://i.ibb.co/5vq44p3/arrow-up.png'} alt=""/>
                         </button>
-                        <p>{Number.parseFloat(ups/1000).toFixed(1)}k</p>
+                        <p>{Number.parseFloat(score/1000).toFixed(1)}k</p>
                         <button type='button'
                                 className='btn'
                                 onClick={() => {alert('ok')}}
@@ -56,7 +58,7 @@ function RedditCard() {
                         </div>
                         <div className='body'>
                             <h1>{title}</h1>
-                            <h3>{title}</h3>
+                            <h3><a href={url} rel='noreferrer' target='_blank' style={{textAlign:'left'}}>{url}</a></h3>
                         </div>
                         <div className='footer'>
                             <img src={'https://i.ibb.co/HYMP097/comment.png'} alt="" />
