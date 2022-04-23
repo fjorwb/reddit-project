@@ -1,34 +1,17 @@
 import React, {useState, useEffect} from "react";
-
+import {useFetchReddit} from '../utils/useFetchReddit'
 import '../App.css'
 
 const logo = require('../assets/images/RedditLogo.png')
 
 function RedditCard() {
 
-    const [dataCard, setdataCard] = useState([])
-    const [urlCard, setUrlCard] = useState('https://www.reddit.com/r/all.json')
-
-    const getFetchCard = async () => {
-        const resp = await fetch(urlCard)
-        if(resp.ok) {
-            const data = await resp.json()
-            setdataCard(data.data.children)
-            return
-        }
-        throw new Error('Request failed!')
-    }
-
-
-
-    useEffect(() => {
-        getFetchCard(urlCard)
-    },[urlCard])
+    const {data} = useFetchReddit()
 
     return(
         <div>
 
-        {dataCard.map((dd, ndx) => {
+        {data.map((dd, ndx) => {
             const {score, subreddit_name_prefixed, author, created, title, description, num_comments, url} = dd.data
                 const time = Math.floor((Date.now() - (created * 1000)) / (60*60*1000))
 

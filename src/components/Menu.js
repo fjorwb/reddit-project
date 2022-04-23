@@ -1,12 +1,20 @@
 import React from 'react'
+
+import {useDispatch, useSelector} from 'react-redux'
 import {Link} from 'react-router-dom'
+
+import {Endpoint} from '../features/pageSlice'
+
+
 
 import navbarItems from '../assets/others/navbarItems'
 import links from '../assets/others/links'
 
 import '../App.css'
 
-function NavBar() {
+function Menu() {
+    // const {page} = useSelector(store => store.page)
+    const dispatch = useDispatch()
 
     let lnk = []
 
@@ -19,8 +27,12 @@ function NavBar() {
                     return (
                         <li key={id} >
                                 <Link to={lnk.url}>
-                                    <img src={img} width='26' alt={text} title={text}   />
-                                    <div>{text}</div>
+                                    <button type='text' 
+                                            className='btn-menu' 
+                                            onClick={() => dispatch(Endpoint(text.toLowerCase()))}>
+                                        <img src={img} width='26' alt={text} title={text}   />
+                                        <div>{text}</div>
+                                    </button>
                                 </Link>
                         </li>
                     )
@@ -30,4 +42,4 @@ function NavBar() {
     )
 }
 
-export default NavBar
+export default Menu

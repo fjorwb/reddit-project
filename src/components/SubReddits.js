@@ -31,7 +31,6 @@ function SubReddits() {
 
         {dataSubreddit.map((ds, ndx) => {
             const {icon_img, display_name_prefixed, url} = ds.data
-            console.log(ds)
 
             return(
                 <section className='subreddit-card' width='256' key={ndx}>
