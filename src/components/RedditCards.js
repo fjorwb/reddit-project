@@ -4,13 +4,13 @@ import {RedditCard, SubReddits} from './index'
 
 function RedditCards() {
     return(
-        <section className='reddit-cards container'>
-            <div style={{width: '63%', marginRight: '1rem'}} >
+        <section className='reddit-cards '>
+            {/* <div className='rediit-card'> */}
                 <RedditCard/>
-            </div >
-            <div style={{width: '35%'}} >
+            {/* </div > */}
+            {/* <div className='subreddit'> */}
                 <SubReddits />
-            </div>
+            {/* </div> */}
         </section>
     )
 }

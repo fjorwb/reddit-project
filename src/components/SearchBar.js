@@ -1,25 +1,40 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-const logo = require('../assets/images/RedditLogo.png')
+import React,{useState} from 'react'
+import { useDispatch } from 'react-redux'
+
+import {EndpointS} from '../features/pageSlice'
+
 
 function SearchBar() {
+    const [txt, setTxt] = useState('')
+
+    // const {page, search} = useSelector((store) => store.page)
+
+
+    const dispatch = useDispatch()
+
+    function handleChange(e) {
+        e.preventDefault()
+        setTxt(e.target.value)
+    }
+
+    const searchimg = 'https://i.ibb.co/Y8v6ZGJ/search.png'
+
     return(
-        <section className='header'>
-            <div className='logo'>
-                <div className='img'>
-                    <Link to='/'>
-                        <img src={logo} width='35' alt='logo' />
-                    </Link>
-                </div>
-                <div className='logo-title'>
-                    <h2 className='word1'>Reddit</h2>
-                    <h2 className='word2'>minimal</h2>
-                </div>
-            </div>
-            <div className='search-bar'>
-                <input type="text" placeholder='Search' />
-            </div>
-        </section>
+        <div className='search-bar'>
+            <input 
+                type="search" 
+                name= 'q'
+                placeholder='Search'
+                onChange={handleChange}
+            />
+            <button 
+                type='text'
+                className='btn-search'
+                onClick={() => {dispatch(EndpointS(txt))}}
+                >
+                    <img src={searchimg} alt='search' title='search' />
+            </button>
+        </div>
     )
 }
 

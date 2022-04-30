@@ -1,29 +1,39 @@
 const navbarItems = [
     {
         id: 1,
-        img: "https://i.ibb.co/NNT5trr/rocket.png",
-        text: 'Best'
+        img: "https://i.ibb.co/WnRDJxM/rocket.png",
+        text: 'Best',
+        url: '/best'
     },
     {
         id: 2,
-        img: "https://i.ibb.co/YbKZwxf/fire.png",
-        text: 'Hot'
+        img: "https://i.ibb.co/qJH5gT7/fire.png",
+        text: 'Hot',
+        url: '/hot'
     },
     {
         id: 3,
-        img: "https://i.ibb.co/fr9TWNn/star.png",
-        text: 'New'
+        img: "https://i.ibb.co/h8YrSwL/star.png",
+        text: 'New',
+        url: '/new'
     },
     {
         id: 4,
-        img: "https://i.ibb.co/9sj31YY/bartop.png",
-        text: 'Top'
+        img: "https://i.ibb.co/Xk8vZpC/bartop.png",
+        text: 'Top',
+        url: '/top'
     },
     {
         id: 5,
-        img: "https://i.ibb.co/pwsPn6K/rising.png",
-        text: 'Rising'
+        img: "https://i.ibb.co/zRfphmh/rising.png",
+        text: 'Rising',
+        url: '/rising'
     }
 ]
 
 export default navbarItems;
+
+
+
+
+

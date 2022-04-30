@@ -1,25 +1,28 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {useSelector} from 'react-redux'
+import navbarItems from './assets/others/navbarItems'
+
 import './App.css';
 
-import {Home, Best, Hot, New, Top, Rising} from './pages/index'
+import {Home, Feature} from './pages/index'
 
-import reducer from './reducer';
-import Fetch from './components/fech';
 
 function App() {
+
+	const {idp} = useSelector((store) => store.page)
+	console.log(idp)
+    const pageData = navbarItems.filter((item) => item.id === idp)
+	const {url} = pageData[0]
+	console.log(url);
+
 	return (
-			<Router>
-				<Routes>
-					<Route exact path='/' element={<Home />}/>
-					<Route path='/best' element={<Best />}/>
-					<Route path='/hot' element={<Hot />}/>
-					<Route path='/new' element={<New />}/>
-					<Route path='/top' element={<Top />}/>
-					<Route path='/rising' element={<Rising />}/>
-					<Route path='/fetch' element={<Fetch />} />
-				</Routes>
-			</Router>
+		<Router>
+			<Routes>
+				<Route exact path='/' element={<Home />}/>
+				<Route path={url} element={<Feature />}/>
+			</Routes>
+		</Router>
 	);
 }
 

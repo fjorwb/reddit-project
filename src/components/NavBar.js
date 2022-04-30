@@ -2,12 +2,13 @@ import React from 'react'
 
 import '../App.css';
 
-import {Menu, SearchBar} from './index'
+import {Logo, Menu, SearchBar} from './index'
 
 function NavBar() {
     
     return(
         <div className='NavBar'>
+            <Logo />
             <SearchBar />
             <Menu />
         </div>

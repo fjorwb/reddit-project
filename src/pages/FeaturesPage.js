@@ -1,18 +1,27 @@
 import React from 'react'
-
+import {useSelector} from 'react-redux'
 import {Navbar, RedditCard, SubReddits} from '../components/index'
+import navbarItems from '../assets/others/navbarItems'
 
-function Best() {
+function Features() {
+    const {page, idp} = useSelector((store) => store.page)
+
+    console.log(page, idp);
+
+    const pageData = navbarItems.filter((item) => item.id === idp)
+    console.log(pageData)
+    const {id, img, url} = pageData[0]
+    console.log(id, img, url)
 
     return(
         <section className='home'>
             <Navbar />
             <div className='features'>
                 <div className='features-img'>
-                    <img src="https://i.ibb.co/NNT5trr/rocket.png" alt="" width='100'/>
+                    <img src={img} alt={page} width='100'/>
                 </div>
                 <div className='features-main reddit-cards' >
-                    <RedditCard page='best'/>
+                    <RedditCard page={page}/>
                 </div>
                 <div className='features-side'>
                     <SubReddits />
@@ -23,4 +32,4 @@ function Best() {
     )
 }
 
-export default Best
+export default Features
