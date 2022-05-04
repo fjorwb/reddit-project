@@ -7,9 +7,6 @@ import {EndpointS} from '../features/pageSlice'
 function SearchBar() {
     const [txt, setTxt] = useState('')
 
-    // const {page, search} = useSelector((store) => store.page)
-
-
     const dispatch = useDispatch()
 
     function handleChange(e) {

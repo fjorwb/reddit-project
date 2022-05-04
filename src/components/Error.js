@@ -6,10 +6,10 @@ export class ErrorHandler extends Component {
         message: 'Something went wrong!'
     }
 
-    // static getDerivedStateFromError(error) {
-    // // Update state so the next render will show the fallback UI.
-    // return { hasError: true }
-    // }
+    static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true }
+    }
 
     componentDidCatch(error, info) {
         this.setState({

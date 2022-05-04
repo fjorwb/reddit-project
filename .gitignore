@@ -21,6 +21,7 @@
 /.psd
 .txt
 links.js
+/images
 
 
 npm-debug.log*

@@ -22,11 +22,6 @@ function ButtonMenu() {
                             <img src={img} width='26' alt="logo"   />
                             <p >{text}</p>
                             <Link to={link.url}></Link>
-                            {/* <button type='button' className='btn-menu' >
-                                <img src={img} width='26' alt="logo"   />
-                                <p >{text}</p>
-                                <Link to={link.url}></Link>
-                            </button> */}
                         </li>
                     )
                 })}
