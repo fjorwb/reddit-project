@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {Provider} from 'react-redux'
 import {store} from './store'
-// import {ErrorHandler} from './components/Error'
+import {ErrorHandler} from './components/Error'
 
 import './index.css';
 
@@ -12,11 +12,11 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    // <ErrorHandler>
+    <ErrorHandler>
         <Provider store={store}>
             <App />
         </Provider>
-    // </ErrorHandler>
+    </ErrorHandler>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -4,6 +4,7 @@ import {useSelector} from 'react-redux'
 export const useFetchReddit = () => {
 
     const {page, search} = useSelector((store) => store.page)
+    console.log(page)
 
     const [data, setData] = useState([])
 
@@ -12,6 +13,7 @@ export const useFetchReddit = () => {
                     : page === 'best' 
                     ? `https://www.reddit.com/${page}.json` 
                     : `https://www.reddit.com/r/all/${page}.json`)
+                    console.log(urlCard);
         
                     const getFetchCard = async () => {
                         const resp = await fetch(urlCard)

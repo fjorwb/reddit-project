@@ -19,6 +19,9 @@
 .env.production.local
 /xzx
 /.psd
+.txt
+links.js
+
 
 npm-debug.log*
 yarn-debug.log*

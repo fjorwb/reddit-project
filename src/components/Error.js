@@ -1,17 +1,21 @@
 import React, {Component} from 'react';
 
-class ErrorHandler extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            hasError: false,
-            message: 'Something went wrong!'
-        }
+export class ErrorHandler extends Component {
+    state = {
+        hasError: false,
+        message: 'Something went wrong!'
     }
 
+    // static getDerivedStateFromError(error) {
+    // // Update state so the next render will show the fallback UI.
+    // return { hasError: true }
+    // }
+
     componentDidCatch(error, info) {
-        this.state({
-            hasError: true})
+        this.setState({
+            hasError: true,
+            message: error.message
+        })
     }
 
     render() {
@@ -24,5 +28,3 @@ class ErrorHandler extends Component {
         return this.props.children
     }
 }
-
-export default ErrorHandler

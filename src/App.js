@@ -11,10 +11,8 @@ import {Home, Feature} from './pages/index'
 function App() {
 
 	const {idp} = useSelector((store) => store.page)
-	console.log(idp)
     const pageData = navbarItems.filter((item) => item.id === idp)
 	const {url} = pageData[0]
-	console.log(url);
 
 	return (
 		<Router>

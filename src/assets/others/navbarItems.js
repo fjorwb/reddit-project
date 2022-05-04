@@ -1,5 +1,12 @@
 const navbarItems = [
     {
+        id: 0,
+        img: "",
+        text: '',
+        url: '/'
+
+    },
+    {
         id: 1,
         img: "https://i.ibb.co/WnRDJxM/rocket.png",
         text: 'Best',

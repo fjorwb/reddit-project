@@ -6,12 +6,8 @@ import navbarItems from '../assets/others/navbarItems'
 function Features() {
     const {page, idp} = useSelector((store) => store.page)
 
-    console.log(page, idp);
-
     const pageData = navbarItems.filter((item) => item.id === idp)
-    console.log(pageData)
-    const {id, img, url} = pageData[0]
-    console.log(id, img, url)
+    const {img} = pageData[0]
 
     return(
         <section className='home'>

@@ -49,6 +49,7 @@ Nav Bar
   align-items: center;
   padding: 0 0.5rem;
   margin-right: 1rem;
+  margin-left: 5rem;
 }
 
 .logo .img {
@@ -483,7 +484,7 @@ reddits
 }
 
 
- @media screen and (max-width: 500px){
+ @media screen and (max-width: 540px){
 
   body {
     font-size: 14px;
@@ -500,8 +501,10 @@ reddits
   }
   .logo {
   width: 100%;
-  /* display: flex; */
-  /* justify-content: start; */
+  display: inline-flex;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
   }
   .logo .logo-title {
     font-size: 1rem;
