@@ -18,6 +18,10 @@
 .env.test.local
 .env.production.local
 /src/xzx
+/src/assets/images
+/src/assets/others/.txt
+/src/assets/others/.png
+
 /.psd
 .txt
 links.js
