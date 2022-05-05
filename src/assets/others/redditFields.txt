@@ -1,8 +1,0 @@
-votes .data.
-author(comunity) .data.subreddit_name_prefixed
-post .data.author
-time .data.created
-title .data.title
-description .data.
-comments .data.num_comments
-url .data.url
