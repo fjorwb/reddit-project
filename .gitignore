@@ -17,7 +17,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/xzx
+/src/xzx
 /.psd
 .txt
 links.js
